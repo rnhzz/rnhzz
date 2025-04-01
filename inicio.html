@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Inicio</title>
+</head>
+<body bgcolor="#f2b385">
+    <!-- Modal de Login -->
+    <div id="loginModal" class="login-modal">
+        <div class="login-container">
+            <span class="close-modal">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit">Entrar</button>
+                <p id="loginMessage" class="message"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal do Quiz -->
+    <div id="quizModal" class="quiz-modal">
+        <div class="quiz-container glassmorphism">
+            <span class="close-quiz">&times;</span>
+            <h2>Quiz!</h2>
+            <div id="quizContent">
+                <!-- O quiz será inserido aqui via JavaScript -->
+            </div>
+            <div id="quizResult" class="quiz-result"></div>
+        </div>
+    </div>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li class="dropdown">
+                <a href="filmes favoritos.html">Filmes ▼</a>
+                <ul class="submenu">
+                    <li><a href="filme-bettlejuice.html">Bettlejuice</a></li>
+                    <li><a href="filme-mazerunner.html">Maze Runner</a></li>
+                    <li><a href="filme-ghostbusters.html">Ghost Busters</a></li>
+                </ul>
+            </li>
+            <li><a href="conta.html">Conta</a></li>
+            <li><a href="corazon.html">❤️</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+        <!-- Botão do Quiz -->
+        <div class="quiz-button-container">
+            <button id="openQuizBtn" class="glassmorphism-btn">🎬 Iniciar Quiz</button>
+        </div>
+
+        <!-- Seu conteúdo adicional pode vir aqui -->
+    </div>
+    
+
+    <!-- Inclusão dos arquivos JavaScript separados -->
+    <script src="JS/login.js" defer></script>
+    <script src="JS/quiz.js" defer></script>
+    <script src="JS/menu-active.js" defer></script>
+</body>
+</html>

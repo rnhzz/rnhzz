@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Sobre | RZ Corp</title>
+</head>
+<body bgcolor="#f2b385">
+    <nav>
+        <ul class="menu">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a class="active" href="sobre.html">Sobre</a></li>
+            <li class="dropdown">
+                <a href="filmes favoritos.html">Filmes ▼</a>
+                <ul class="submenu">
+                    <li><a href="filme-bettlejuice.html">Bettlejuice</a></li>
+                    <li><a href="filme-mazerunner.html">Maze Runner</a></li>
+                    <li><a href="filme-ghostbusters.html">Ghost Busters</a></li>
+                </ul>
+            </li>
+            <li><a href="conta.html">Conta</a></li>
+            <li><a href="corazon.html">❤️</a></li>
+             
+        </ul>
+    </nav>
+
+    <div class="love-letter glassmorphism">
+        <div class="heart-icon">❤️</div>
+        
+        <div class="message-part">
+            <p class="handwriting">Oiiiiiiiiii meu amor, provavelmente você está vendo essa mensagem e o site (óbvio) por causa do presentinho hihi, enfim, fiz isto para te mostrar o quão incrível você é e como merece tudo de bom, fazer isto era o mínimo que eu poderia fazer, não é?</p>
+            
+            <p class="handwriting">Sem mais delongas, eu te amo muito meu amor</p>
+            
+            <div class="formal-part">
+                <p>(Agora vai o texto formal kkkkkk)</p>
+                <p>Olá, nós somos da "RZ Corp" uma empresa totalmente capacitada em fazer isto aqui (site), nós gostaríamos que soubesse que você é uma pessoa muito querida e especial (te amamos) e que merece todo o carinho deste mundo, esperamos que tenha ficado feliz ou tenha sorrido com nossos serviços, temos orgulho de você, du!.</p>
+                <p class="signature">Com carinho,<br>RZ Corporation</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Adiciona classe 'active' automaticamente
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop() || 'inicio.html';
+            document.querySelectorAll('.menu a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+                
+                // Para o dropdown
+                if (link.parentElement.classList.contains('dropdown')) {
+                    const dropdownLinks = link.nextElementSibling.querySelectorAll('a');
+                    dropdownLinks.forEach(dropLink => {
+                        if (dropLink.getAttribute('href') === currentPage) {
+                            link.classList.add('active');
+                            dropLink.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+        </script>
+</body>
+</html>

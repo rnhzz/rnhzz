@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <title>Para Você ❤️</title>
+    <style>
+        /* Estilos específicos para esta página */
+        .love-page {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .couple-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .couple-photo {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.5s;
+        }
+        
+        .couple-photo:hover {
+            transform: scale(1.03);
+        }
+        
+        .couple-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .love-message {
+            flex: 1;
+            color: white;
+        }
+        
+        .love-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #ff6b8b;
+            text-align: center;
+        }
+        
+        .love-poem {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+        
+        .love-poem p {
+            margin: 15px 0;
+            transition: all 0.3s;
+        }
+        
+        .love-poem p:hover {
+            transform: translateX(10px);
+        }
+        
+        .signature {
+            font-family: cursive;
+            font-size: 1.5rem;
+            text-align: right;
+            margin-top: 40px;
+            color: #ff6b8b;
+        }
+        
+        .hearts {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0;
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body bgcolor="#f2b385">
+    <!-- Menu de navegação (igual às outras páginas) -->
+    <nav>
+        <ul class="menu">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li class="dropdown">
+                <a href="filmes favoritos.html">Filmes ▼</a>
+                <ul class="submenu">
+                    <li><a href="filme-bettlejuice.html">Bettlejuice</a></li>
+                    <li><a href="filme-mazerunner.html">Maze Runner</a></li>
+                    <li><a href="filme-ghostbusters.html">Ghost Busters</a></li>
+                </ul>
+            </li>
+            <li><a href="conta.html">Conta</a></li>
+            <li><a class="active" href="corazon.html">❤️</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo romântico -->
+    <div class="love-page glassmorphism">
+        <h1 class="love-title">Para Você, Meu Amor ❤️</h1>
+        
+        <div class="couple-container">
+            <div class="couple-photo">
+                <img src="../imagens/casal.jpg" alt="Nós dois">
+            </div>
+            
+            <div class="love-message">
+                <div class="love-poem">
+                    <p>Como pude?</p>
+                    <p>Como eu pude achar uma</p>
+                    <p>pessoa tão incrível</p>
+                    <p>como você, meu amor?</p>
+                    
+                    <p>Você é a mulher da minha vida,</p>
+                    <p>minha alma gêmea, minha!</p>
+                </div>
+                
+                <div class="hearts">❤️ ❤️ ❤️</div>
+                
+                <p class="signature">Eu te amo infinitamente<br>Para sempre, seu amor</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Efeitos de animação -->
+    <script>
+        // Efeito de digitação para o poema (opcional)
+        document.addEventListener('DOMContentLoaded', function() {
+            const poemLines = document.querySelectorAll('.love-poem p');
+            
+            poemLines.forEach((line, index) => {
+                setTimeout(() => {
+                    line.style.opacity = '1';
+                }, index * 500);
+            });
+        });
+    </script>
+</body>
+</html>

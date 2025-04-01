@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Minha Conta</title>
+</head>
+<body bgcolor="#f2b385">
+   <nav>
+        <ul class="menu">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li class="dropdown">
+                <a href="filmes favoritos.html">Filmes ▼</a>
+                <ul class="submenu">
+                    <li><a href="filme-bettlejuice.html">Bettlejuice</a></li>
+                    <li><a href="filme-mazerunner.html">Maze Runner</a></li>
+                    <li><a href="filme-ghostbusters.html">Ghost Busters</a></li>
+                </ul>
+            </li>
+            <li><a href="conta.html">Conta</a></li>
+            <li><a href="corazon.html">❤️</a></li>
+        </ul>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-header glassmorphism">
+            <img src="imagens/avatar.png" alt="Avatar" class="profile-avatar">
+            <h1 id="usernameDisplay">Olá, <span id="userSpan">Usuário</span>!</h1>
+        </div>
+        
+        <!-- Conteúdo do seu arquivo (adaptado) -->
+        <div class="dashboard glassmorphism">
+            <img src="imagens/dashboard.png" alt="Dashboard" class="dashboard-image">
+            <div class="user-stats">
+                <p>Você tem <strong>3 filmes</strong> favoritos</p>
+                <p>Último acesso: <span id="lastAccess">hoje</span></p>
+            </div>
+        </div>
+    </div>
+ 
+
+    <script>
+        // Exibe o usuário logado
+        const loggedUser = localStorage.getItem('loggedUser');
+        if (loggedUser) {
+            document.getElementById('userSpan').textContent = loggedUser;
+        } else {
+            window.location.href = 'inicio.html'; // Redireciona se não estiver logado
+        }
+        
+        // Atualiza último acesso
+        document.getElementById('lastAccess').textContent = new Date().toLocaleDateString();
+    </script>
+    <script>
+        // Adiciona classe 'active' automaticamente
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = location.pathname.split('/').pop() || 'inicio.html';
+            document.querySelectorAll('.menu a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+                
+                // Para o dropdown
+                if (link.parentElement.classList.contains('dropdown')) {
+                    const dropdownLinks = link.nextElementSibling.querySelectorAll('a');
+                    dropdownLinks.forEach(dropLink => {
+                        if (dropLink.getAttribute('href') === currentPage) {
+                            link.classList.add('active');
+                            dropLink.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+        </script>
+</body>
+</html>
